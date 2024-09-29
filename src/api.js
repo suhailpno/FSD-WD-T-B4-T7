@@ -1,6 +1,6 @@
 // api.js
 const API_KEY = "c9780bdd";
-const BASE_URL = "http://www.omdbapi.com/";
+const BASE_URL = "https://www.omdbapi.com/"; // Updated to https
 
 export const fetchMovies = async (searchTerm, type, page = 1) => {
   const response = await fetch(
@@ -18,7 +18,7 @@ export const fetchMovieDetail = async (id) => {
 
 export const fetchPopularMovies = async () => {
   const response = await fetch(
-    `https://www.omdbapi.com/?s=popular&apikey=c9780bdd`
+    `https://www.omdbapi.com/?s=popular&apikey=${API_KEY}` // Updated to https
   );
   const data = await response.json();
   return data;
@@ -26,7 +26,7 @@ export const fetchPopularMovies = async () => {
 
 export const fetchTopRatedMovies = async () => {
   const response = await fetch(
-    `https://www.omdbapi.com/?s=top_rated&apikey=c9780bdd`
+    `https://www.omdbapi.com/?s=top_rated&apikey=${API_KEY}` // Updated to https
   );
   const data = await response.json();
   return data;
